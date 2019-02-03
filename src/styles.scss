@@ -1,1 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One|Nanum+GothiCoding|Source+Sans+Pro:300,400,500&subset=latin');
+
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+  background-color: #333;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: inherit
+}
+
+h1 {
+  font-family: 'Julius Sans One', sans-serif;
+  font-weight: normal;
+}
+
+// Device = Desktops
+// Screen = 1281px to higher resolution desktops
+@media screen and (min-width: 1800px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 30%;
+  }
+}
