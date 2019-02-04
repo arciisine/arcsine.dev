@@ -62,8 +62,9 @@ $footer-height: 50px;
 }
 
 .content {
-  background: #eee;
-  overflow: auto;
+  background: #e8e8e8;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 
   /deep/ &>* {
     display: block;
