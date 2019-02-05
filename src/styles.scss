@@ -3,23 +3,24 @@
 /* You can add global styles to this file, and also import other style files */
 html,
 body {
-  background-color: #333;
+  background-color: #ddd;
   padding: 0;
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
+ 
 }
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
-  display: grid;
-  grid-auto-columns: 1fr;
-  grid-auto-rows: 1fr;
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: inherit
+  font-size: inherit;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 h1 {
@@ -42,7 +43,7 @@ h3 {
   left: 0.15em;
   position: relative;
   top: 0.15em;
-  transform: rotate(135deg);
+  transform: translateX(-.225em) rotate(135deg);
   vertical-align: top;
   width: 0.45em;
 }
@@ -51,7 +52,8 @@ h3 {
 a[name] {
   display: block;
   height: 0;
-  margin-bottom: 1.5rem;
+  position: relative;
+  top: -45px;
 }
 
 // Device = Desktops

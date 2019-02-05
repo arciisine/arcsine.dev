@@ -8,71 +8,76 @@ $footer-height: 50px;
     "content";
 
   grid-template-rows: $header-height 1fr;
-  overflow: hidden;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
-}
 
-.header {
-  padding: 0;
-  margin: 0;
-  grid-area: header;
-  background: #333;
-  display: grid;
-  grid-template-areas: "img title menu";
-  grid-template-columns: $header-height 1fr .3fr;
-  grid-template-rows: 1fr;
 
-  img {
-    grid-area: img;
+  .header {
+    padding: 0;
     margin: 0;
-    padding: 5px;
-    display: block;
-    width: $header-height - 5*2px;
-  }
+    width: 100vw;
+    position: fixed;
+    z-index: 2;
+    grid-area: header;
+    background:transparent;
+    display: grid;
+    grid-template-areas: "img title menu";
+    grid-template-columns: $header-height 1fr .3fr;
+    grid-template-rows: 1fr;
+    background-color: #333;
 
-  h1 {
-    grid-area: title;
-    margin: 0;
-    font-size: 2rem;
-    display: block;
-    line-height: $header-height;
-    color: white;
-  }
+    img {
+      grid-area: img;
+      margin: 0;
+      padding: 5px;
+      display: block;
+      width: $header-height - 5*2px;
+    }
 
-  ul {
-    grid-area: menu;
-    margin: 0;
-    display: block;
-    text-align: right;
-    margin-right: 10px;
-
-    li {
-      font-size: 1.5rem;
+    h1 {
+      grid-area: title;
+      margin: 0;
+      font-size: 2.5rem;
+      display: block;
       line-height: $header-height;
-      display: inline-block;
-      margin-left: 1em;
+      color: white;
+    }
 
-      a {
-        color: white;
-        text-decoration: underline;
+    ul {
+      grid-area: menu;
+      margin: 0;
+      display: block;
+      text-align: right;
+      margin-right: 10px;
+
+      li {
+        font-size: 1.5rem;
+        line-height: $header-height;
+        display: inline-block;
+        margin-left: 1em;
+
+        a {
+          color: white;
+          text-decoration: underline;
+        }
       }
     }
   }
-}
 
-.content {
-  background: #e8e8e8;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
+  .content {   
+    margin-top: $header-height;
+    background: #e8e8e8;
+    min-height: 100vh;
+    z-index: 1;
 
-  /deep/ &>* {
-    display: block;
-    width: 100%;
-  }
+    /deep/ &>* {
+      display: block;
+      width: 100%;
+    }
 
-  >router-outlet {
-    display: none;
+    >router-outlet {
+      display: none;
+    }   
   }
 
   .footer {
@@ -82,5 +87,34 @@ $footer-height: 50px;
     background: rgba(0, 155, 0, .5);
     height: $footer-height;
     overflow: hidden;
+  }
+}
+
+
+:host.full-content {
+  grid-template-areas: none;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+
+  @for $i from 0 through 10  { 
+    &[delta="#{$i*10}"] { 
+      .header {  
+        background-color: rgba(40,40,40, ($i*9)/100);
+      } 
+    } 
+  }
+
+  .header, .content {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .content {
+    margin-top: 0;
+  }
+
+  .header {
+    max-height: $header-height;
+    transition: all .2s ease-in-out;
   }
 }

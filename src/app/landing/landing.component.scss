@@ -19,7 +19,7 @@
 
 .hero {
   display: grid;
-  height: calc(100vh - 45px);
+  height: 100vh;
   width: 100%;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
@@ -93,10 +93,10 @@
 .content {
   display: block;
   box-sizing: border-box;
-  padding: 1.5rem;
+  padding: 2.5rem;
   max-width: 1000px;
   background: #f8f8f8;
-  margin: 0 auto;
+  margin: 2.5rem auto;
 
   @media screen and (max-width: 1000px) {
     max-width: calc(100vw - 30px);
