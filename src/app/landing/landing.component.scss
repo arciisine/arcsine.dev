@@ -91,12 +91,12 @@
 }
 
 .content {
-  display: block;
-  box-sizing: border-box;
-  padding: 2.5rem;
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: 1fr 1fr;
+  grid-column-gap: 2.5rem;
   max-width: 1000px;
-  background: #f8f8f8;
-  margin: 2.5rem auto;
+  margin: 0 auto;
 
   @media screen and (max-width: 1000px) {
     max-width: calc(100vw - 30px);
@@ -113,5 +113,17 @@
     padding: 0;
     color: #444;
     font-size: 2rem;
+    box-sizing: border-box;
+    padding: 2.5rem;
+    background: #f8f8f8;
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    &:nth-of-type(4n + 3) {
+      grid-column: 1;
+    }
+    &:nth-of-type(4n + 4) {
+      grid-column: 2;
+    }
   }
 }
