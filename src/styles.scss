@@ -22,11 +22,19 @@ body {
   font-size: inherit
 }
 
+.brand-text,
 h1 {
   font-family: 'Julius Sans One', sans-serif;
   font-weight: normal;
 }
 
+p {
+  .brand-text {
+    font-weight: bold;
+  }
+}
+
+.heading-text,
 h2,
 h3 {
   font-family: 'Raleway', sans-serif;
