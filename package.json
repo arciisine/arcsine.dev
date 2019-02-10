@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "gh-pages": "/bin/bash -c 'ng build --prod --base-href=https://arcsine.pro; angular-cli-ghpages -b master'"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +23,7 @@
     "core-js": "^2.5.4",
     "normalize.css": "^8.0.1",
     "rxjs": "~6.3.3",
+    "terser": "^3.14.1",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
   },
