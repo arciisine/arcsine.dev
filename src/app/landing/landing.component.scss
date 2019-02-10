@@ -119,6 +119,17 @@
     grid-column-start: 1;
     grid-column-end: 3;
 
+    h3 {
+      a {
+        display: inline-block;
+        margin-left: .25em;
+        color: #444;
+        font-size: 1.2rem;
+        line-height: 100%;
+      }
+    }
+
+    ul,
     p {
       font-family: 'Raleway', 'Sans-Serif';
       font-weight: 200;
@@ -132,6 +143,14 @@
 
       &:last-of-type {
         margin-bottom: 0;
+      }
+    }
+
+    ul {
+      list-style-position: inside;
+
+      a {
+        color: #333;
       }
     }
 
