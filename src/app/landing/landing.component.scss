@@ -19,7 +19,7 @@
 
 .hero {
   display: grid;
-  height: calc(100vh - 45px);
+  height: 100vh;
   width: 100%;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
@@ -92,11 +92,11 @@
 }
 
 .content {
-  display: block;
-  box-sizing: border-box;
-  padding: 3rem;
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: 1fr 1fr;
+  grid-column-gap: 3rem;
   max-width: 1200px;
-  background: #f8f8f8;
   margin: 0 auto;
 
   @media screen and (max-width: 1200px) {
@@ -118,5 +118,18 @@
     color: #444;
     font-size: 1.8rem;
     line-height: 1.5625em;
+    box-sizing: border-box;
+    padding: 2.5rem;
+    background: #f8f8f8;
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    &:nth-of-type(4n + 3) {
+      grid-column: 1;
+    }
+
+    &:nth-of-type(4n + 4) {
+      grid-column: 2;
+    }
   }
 }
