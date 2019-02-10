@@ -115,6 +115,12 @@
     margin-bottom: 3rem;
     box-sizing: border-box;
     padding: 2.5rem;
+
+    &.img {
+      padding: 0;
+      background: transparent;
+    }
+
     background: #f8f8f8;
     grid-column-start: 1;
     grid-column-end: 3;

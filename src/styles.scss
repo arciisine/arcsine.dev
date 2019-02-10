@@ -85,8 +85,23 @@ a[name] {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 900px) {
   html {
-    font-size: 30%;
+    font-size: 65%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 50%;
+  }
+
+  .content {
+
+    section.left,
+    section.right {
+      grid-column-start: 1 !important;
+      grid-column-end: 3 !important;
+    }
   }
 }
