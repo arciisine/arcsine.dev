@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "arcsine-pro": {
+    "arcsine-dev": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -36,10 +36,11 @@
           "configurations": {
             "production": {
               "fileReplacements": [
-              {
-                "replace": "src/environments/environment.ts",
-                "with": "src/environments/environment.prod.ts"
-              }],
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -50,29 +51,30 @@
               "vendorChunk": false,
               "buildOptimizer": true,
               "budgets": [
-              {
-                "type": "initial",
-                "maximumWarning": "2mb",
-                "maximumError": "5mb"
-              }]
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "arcsine-pro:build"
+            "browserTarget": "arcsine-dev:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "arcsine-pro:build:production"
+              "browserTarget": "arcsine-dev:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "arcsine-pro:build"
+            "browserTarget": "arcsine-dev:build"
           }
         },
         "test": {
@@ -106,7 +108,7 @@
         }
       }
     },
-    "arcsine-pro-e2e": {
+    "arcsine-dev-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -115,11 +117,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "arcsine-pro:serve"
+            "devServerTarget": "arcsine-dev:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "arcsine-pro:serve:production"
+              "devServerTarget": "arcsine-dev:serve:production"
             }
           }
         },
@@ -135,5 +137,5 @@
       }
     }
   },
-  "defaultProject": "arcsine-pro"
+  "defaultProject": "arcsine-dev"
 }
