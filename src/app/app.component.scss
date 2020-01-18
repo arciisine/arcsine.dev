@@ -98,7 +98,7 @@ $footer-height: 40px;
     min-height: 100vh;
     z-index: 1;
 
-    /deep/ &>* {
+    ::ng-deep &>* {
       display: block;
       width: 100%;
     }
